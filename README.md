@@ -1,5 +1,7 @@
 # Państwa i Miasta 🎲
 
+**[Otwórz aplikację](https://arturslab.github.io/panstwa-i-miasta/)**
+
 Aplikacja webowa wspomagająca grę **Państwa i Miasta** — losuje literę rundy z animacją i obsługuje odliczanie czasu.
 
 ## Funkcje
