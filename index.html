@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Państwa i Miasta</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#302b63">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="P&amp;M">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -52,7 +58,7 @@
             color: rgba(255,255,255,0.35);
             font-size: clamp(0.7rem, 1.3vw, 0.95rem);
             letter-spacing: 0.12em;
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.3rem;
             z-index: 1;
             min-height: 1.2em;
         }
@@ -439,7 +445,7 @@
 
         /* Flipcard */
         .answer-card {
-            width: 175px;
+            width: 155px;
             height: 110px;
             perspective: 800px;
             cursor: pointer;
@@ -582,6 +588,10 @@
     <div id="excluded-section">
         <h2>Wylosowane litery</h2>
         <div id="excluded-grid"></div>
+    </div>
+
+    <div id="footer" style="margin-top:2rem;color:rgba(255,255,255,0.2);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;">
+        stworzono z ❤️ przez <a href="https://melma.pl" title="Author page" style="color:rgba(255,255,255,0.4);text-decoration:underline;">melma.pl</a>
     </div>
 
     <script>
@@ -948,6 +958,11 @@
             spinning = false;
             playNewGame();
         });
+
+        /* ---- Service Worker ---- */
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+        }
     </script>
 </body>
 </html>
