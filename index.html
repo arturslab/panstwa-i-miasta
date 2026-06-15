@@ -565,7 +565,7 @@
         </div>
     </div>
 
-    <div id="round-display">Runda <span id="round-num">1</span></div>
+    <div id="round-display">Runda <span id="round-num">0</span></div>
     <h1 class="title">Państwa i Miasta</h1>
     <p id="hint">naciśnij START aby wylosować literę</p>
 
@@ -595,7 +595,8 @@
     </div>
 
     <script>
-        const ALL_LETTERS = 'ABCDEFGHIJKLMNOPRSTUWYZ'.split('');
+        // const ALL_LETTERS = 'ABCDEFGHIJKLMNOPRSTUWYZ'.split('');
+        const ALL_LETTERS = 'ABCD'.split('');
         const INITIAL_EXCLUDED = [];
 
         let excluded = new Set(INITIAL_EXCLUDED);
@@ -619,7 +620,7 @@
         const canvas        = document.getElementById('confetti');
         const ctx           = canvas.getContext('2d');
 
-        let round = 1;
+        let round = 0;
         let currentLetter = null;
         let answersData = {};
 
@@ -943,7 +944,7 @@
         /* ---- Nowa gra ---- */
         btnNewGame.addEventListener('click', () => {
             excluded = new Set();
-            round = 1;
+            round = 0;
             currentLetter = null;
             roundNumEl.textContent = round;
             rebuildGrid();
