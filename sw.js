@@ -1,4 +1,4 @@
-const CACHE = 'pm-v1';
+const CACHE = 'pm-v2';
 const ASSETS = ['./', './index.html', './answers.json', './manifest.json',
                 './icons/icon-192.png', './icons/icon-512.png', './icons/icon.svg'];
 
